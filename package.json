@@ -4,7 +4,7 @@
   "description": "A collection of useful template scripts for NodeJS",
   "main": "scripts/request.js",
   "dependencies": {
-    "archiver": "^2.0.0",
+    "adm-zip": "^0.4.7",
     "request": "^2.81.0"
   },
   "devDependencies": {},
