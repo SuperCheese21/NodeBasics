@@ -1,0 +1,17 @@
+{
+  "name": "task_scraper",
+  "version": "2.3.0",
+  "description": "Scrapes task data from the lucid website and writes to CSV files",
+  "main": "scripts/request/getTasks.js",
+  "dependencies": {
+    "archiver": "^2.0.0",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node scripts/request/getTasks.js",
+    "clean": "node scripts/clean.js"
+  },
+  "author": "Ethan Shields",
+  "license": "ISC"
+}
