@@ -2,25 +2,21 @@ const util = require('./util.js');
 
 // Returns formatted date given, month, day, and year
 var formatDate = function(m, d, y) {
-    m = util.checkZeros(m + 1, 2);
-    d = util.checkZeros(d, 2);
-    y -= 100;
+    m = getMonthString(m);
+    y += 1900;
 
-    return m + '/' + d + '/' + y;
+    return m + ' ' + d + ', ' + y;
 }
 
 // Returns formatted time given hours, minutes, and seconds
-var formatTime = function(h, m, s) {
+var formatTime = function(h, m) {
     var t = 'AM';
-    if (h >= 12) {
-        t = 'PM';
-        h -= 12;
-    }
-    h = util.checkZeros(h, 2);
-    m = util.checkZeros(m, 2);
-    s = util.checkZeros(s, 2);
+    if (h >= 12) t = 'PM';
+    if (h >= 13) h -= 12;
 
-    return h + ':' + m + ':' + s + ' ' + t + ' PDT';
+    m = util.checkZeros(m, 2);
+
+    return h + ':' + m + ' ' + t;
 };
 
 // Returns month name based on month number
@@ -45,7 +41,7 @@ var parseUnixTime = function(n) {
     var date = new Date(n);
 
     var day = formatDate(date.getMonth(), date.getDate(), date.getYear());
-    var time = formatTime(date.getHours(), date.getMinutes(), date.getSeconds());
+    var time = formatTime(date.getHours(), date.getMinutes());
 
     return day + ' ' + time;
 };

@@ -30,13 +30,13 @@ var writeFile = function(file, data) {
     });
 };
 
-// converts a data array to CSV format
-var addCSVLine = function(data) {
+// converts a data array to delimiter separated format
+var addDSVLine = function(data, delimiter) {
     var line = '';
 
     for (var i = 0; i < data.length; i++) {
         line += data[i];
-        if (i < data.length - 1) line += ',';
+        if (i < data.length - 1) line += delimiter;
     }
 
     return line + '\n';
@@ -46,5 +46,5 @@ module.exports = {
     checkZeros: checkZeros,
     zip: zip,
     writeFile: writeFile,
-    addCSVLine: addCSVLine
+    addDSVLine: addDSVLine
 };
