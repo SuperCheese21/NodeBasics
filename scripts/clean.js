@@ -1,15 +1,10 @@
 const fs = require('fs');
 
 // Directories to clean
-var include = [
-    'output/',
-    'output/word_data/'
-];
+var include = [];
 
 // Specific directories or files not to clean
-var exclude = [
-    'word_data'
-];
+var exclude = [];
 
 // Loops through each directory
 for (var i = 0; i < include.length; i++) {
