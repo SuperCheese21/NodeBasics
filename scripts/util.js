@@ -4,6 +4,7 @@ const AdmZip = require('adm-zip');
 // Adds a certain amount of zeros in front of a number based on its length
 var checkZeros = function(n, k) {
     for (var i = 0; i < k; i++) {
+        if (n === 0) i++;
         if (n < Math.pow(10, i)) n = '0' + n;
     }
     return n;
